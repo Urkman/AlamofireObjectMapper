@@ -60,9 +60,9 @@ extension Request {
             if let keyPath = keyPath , keyPath.isEmpty == false {
                 JSONToMap = result.value.map({
                     $0 as AnyObject
-                })?.value(forKeyPath: keyPath)
+                })?.value(forKeyPath: keyPath) as AnyObject
             } else {
-                JSONToMap = result.value
+                JSONToMap = result.value as AnyObject
             }
             
             if let object = object {
@@ -112,9 +112,9 @@ extension Request {
             if let keyPath = keyPath, keyPath.isEmpty == false {
                 JSONToMap = result.value.map({
                     $0 as AnyObject
-                })?.value(forKeyPath: keyPath)
+                })?.value(forKeyPath: keyPath) as AnyObject
             } else {
-                JSONToMap = result.value
+                JSONToMap = result.value as AnyObject
             }
             
             if let parsedObject = Mapper<T>(context: context).mapArray(JSONToMap){
